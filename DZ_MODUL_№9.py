@@ -8,11 +8,11 @@ def input_error(func):
             result = func(*x, **y)
             return result
         except KeyError as e:
-            return str(e)
+            return str(e.args[0])
         except ValueError as e:
-            return str(e)
+            return str(e.args[0])
         except IndexError as e:
-            return str(e)
+            return str(e.args[0])
     return inner
 
 
